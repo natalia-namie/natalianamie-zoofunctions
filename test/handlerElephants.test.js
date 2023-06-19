@@ -31,4 +31,9 @@ describe('Testes da função HandlerElephants', () => {
     const expected = ['Friday', 'Saturday', 'Sunday', 'Tuesday'];
     expect(actual).toEqual(expected);
   });
+  it('retorna undefined se não passar argumentos', () => {
+    const actual = handlerElephants();
+    const expected = undefined;
+    expect(actual).toEqual(expected);
+  });
 });
