@@ -36,4 +36,14 @@ describe('Testes da função HandlerElephants', () => {
     const expected = undefined;
     expect(actual).toEqual(expected);
   });
+  it('retorna null', () => {
+    const actual = handlerElephants('ramdom');
+    const expected = null;
+    expect(actual).toEqual(expected);
+  });
+  it('retorna informação de parâmetro inválido', () => {
+    const actual = handlerElephants(1234);
+    const expected = 'Parâmetro inválido, é necessário uma string';
+    expect(actual).toEqual(expected);
+  });
 });
