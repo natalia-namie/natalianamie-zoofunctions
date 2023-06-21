@@ -10,12 +10,18 @@ const zooWeek = (scheduleTarget) => {
     const speciesAv = species
       .filter((name) => name.availability.includes(weekDay)).map((animal) => animal.name);
 
-    info[weekDay] = {
-      officeHour: scheduleTarget === 'Monday' ? 'CLOSED' : openingHour,
-      exhibition: scheduleTarget === 'Monday' ? 'The zoo will be closed!' : speciesAv,
-    };
+    if (weekDay === 'Monday') {
+      info[weekDay] = {
+        officeHour: 'CLOSED',
+        exhibition: 'The zoo will be closed!',
+      };
+    } else if (weekDay !== 'Monday') {
+      info[weekDay] = {
+        officeHour: openingHour,
+        exhibition: speciesAv,
+      };
+    }
   });
-
   return info;
 };
 
